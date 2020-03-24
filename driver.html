@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Graphic World</title>
+    <link href="driver.css" rel ="stylesheet" type="text/css">
+</head>
+<body onload="main()">
+  
+    <button id="save" type="button" style="margin-left:20px; margin-right:10px;">Save</button>
+    <input type="file" onchange="onChange(event)">
+    <label class="switch">
+        <input type="checkbox" id="sideview" onclick="clickSideview()">
+        <span class="slider" ></span><br><br>
+            Sideview
+    </label>
+
+    <label class="switch">
+      <input type="checkbox" id="perspective" onclick="clickPersepectiveView()">
+      <span class="slider"></span><br><br>
+          Perspective
+  </label>
+
+  <label class="switch">
+      <input type="checkbox" id="normals" onclick="clickNormalsView()">
+      <span class="slider"></span><br><br>
+          Normals
+  </label>
+  <label class="switch">
+      <input type="checkbox" id="wireframe" onclick="clickWireframeView()">
+      <span class="slider"></span><br><br>
+          Wireframe
+  </label>
+
+  <label class="switch">
+    <input type="checkbox" id="light" onclick="clickLightView()">
+    <span class="slider"></span><br><br>
+        Light
+</label>
+
+<label class="switch">
+  <select name="shading" id="shading" onchange="clickShadingView()">
+      <option value="1">Flat shading</option>
+      <option value="2">Gouraud shading</option>
+      <option value="0" selected>Phong shading</option>
+  </select>
+</label>
+
+<canvas id="canvas" width="800" height="800">
+  Please use a browser that supports "canvas"
+</canvas>
+    
+    <script src="lib/webgl-utils.js"></script>
+    <script src="lib/webgl-debug.js"></script>
+    <script src="lib/cuon-utils.js"></script>
+    <script src="lib/gl-matrix.js"></script>
+    <script src="lib/cuon-matrix.js"></script>
+    <script src="trees.js"></script>
+    <script src="canvas.js"></script>
+    <style>
+        *{padding: 0;margin: 0;}
+        canvas{
+            padding: 0;
+            margin: 0;
+            background: #000;
+        }
+    </style>
+</body>
+</html>
